@@ -1,0 +1,18 @@
+{
+  "name": "td.js",
+  "version": "0.1.0",
+  "description": "Is a line console to starting the application.",
+  "main": "index.js",
+  "bin": {
+    "td": "bin/td.js"
+  },
+  "scripts": {},
+  "author": "Jon Dotsoy <hi@jon.soy>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.4.0",
+    "babel-polyfill": "^6.3.14",
+    "jasmine-node": "^1.14.5",
+    "nodemon": "^1.8.1"
+  }
+}
