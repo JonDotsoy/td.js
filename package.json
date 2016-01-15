@@ -14,5 +14,17 @@
     "babel-polyfill": "^6.3.14",
     "jasmine-node": "^1.14.5",
     "nodemon": "^1.8.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/td.js.git"
+  },
+  "keywords": [
+    "console"
+  ],
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/td.js/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/td.js#readme"
 }
