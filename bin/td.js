@@ -1,2 +1,7 @@
 #!/usr/bin/env node
-var cli = require(__dirname + "/../lib/cli");
+
+'use strict';
+var path = require("path");
+var cliPath = path.resolve(__dirname, "../lib/cli");
+
+var cli = require(cliPath);
