@@ -14,7 +14,7 @@ COPY . /_src
 
 # RUN chmod +rwxr-xr-x /_src
 # RUN chmod +rwxr-xr-x /_src/bin
-RUN chmod +rwxr-xr-x /_src/bin/td.sh
+# RUN chmod +rwxr-xr-x /_src/bin/td.sh
 # RUN npm bin
 
 RUN npm install -g /_src 
