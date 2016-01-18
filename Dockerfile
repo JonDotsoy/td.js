@@ -12,9 +12,13 @@ COPY package.json /_src/package.json
 
 COPY . /_src
 
+# RUN chmod +rwxr-xr-x /_src
+# RUN chmod +rwxr-xr-x /_src/bin
+RUN chmod +rwxr-xr-x /_src/bin/td.sh
+# RUN npm bin
 
-RUN cd /_src && npm install 
-RUN cd /_src && npm ln 
+RUN npm install -g /_src 
+# RUN cd /_src && npm ln 
 # RUN chmod +x /_src/bin/td.js
 # RUN ln -s /_src /usr/local/lib/node_modules/td.js
 # RUN ln -s /usr/local/lib/node_modules/td.js/bin/td.js /usr/local/bin/td
@@ -28,6 +32,8 @@ WORKDIR /home/tduser
 # RUN which td
 # RUN node `which td`
 RUN td
+# RUN ls -l /bin/sh
+# RUN /_src/bin/td.js
 # RUN echo ${PATH}
 # RUN ls -la /usr/local/bin
 # RUN PACH="${PATH}:/usr/local/lib" sh -c "td"
