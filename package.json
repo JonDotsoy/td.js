@@ -1,6 +1,6 @@
 {
   "name": "td.js",
-  "version": "0.2.1",
+  "version": "0.2.6",
   "description": "Is a line console to starting the application.",
   "bin": {
     "td": "./bin/td.js"
