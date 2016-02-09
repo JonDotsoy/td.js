@@ -1,2 +1,8 @@
 node_modules/
 Dockerfile
+.dockerignore
+.git
+.gitignore
+.npmignore
+*.log
+docs/
