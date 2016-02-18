@@ -12,9 +12,12 @@
     "node": ">=5.0.0"
   },
   "dependencies": {
+    "async": "^1.5.2",
     "babel-core": "6.4.0",
     "babel-polyfill": "6.3.14",
+    "colors": "^1.1.2",
     "jasmine-node": "1.14.5",
+    "mkdirp": "^0.5.1",
     "nodemon": "1.8.1"
   },
   "devDependencies": {},
