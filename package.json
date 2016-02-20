@@ -5,7 +5,9 @@
   "bin": {
     "td": "./bin/td.js"
   },
-  "scripts": {},
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json --verbose **/*"
+  },
   "author": "Jon Dotsoy <hi@jon.soy>",
   "license": "ISC",
   "engine": {
@@ -16,9 +18,13 @@
     "babel-core": "6.4.0",
     "babel-polyfill": "6.3.14",
     "colors": "^1.1.2",
+    "ejs": "^2.4.1",
+    "ignore": "^2.2.19",
     "jasmine-node": "1.14.5",
+    "lodash": "^4.5.0",
     "mkdirp": "^0.5.1",
-    "nodemon": "1.8.1"
+    "nodemon": "1.8.1",
+    "walk": "^2.3.9"
   },
   "devDependencies": {},
   "repository": {
