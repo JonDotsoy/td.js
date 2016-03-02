@@ -6,7 +6,7 @@
     "td": "./bin/td.js"
   },
   "scripts": {
-    "doc": "jsdoc -c jsdoc.json --verbose **/*"
+    "doc": "esdoc -c esdoc.json"
   },
   "author": "Jon Dotsoy <hi@jon.soy>",
   "license": "ISC",
