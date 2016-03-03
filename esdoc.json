@@ -2,6 +2,6 @@
   "source": "./lib",
   "destination": "./docs",
   "manual": {
-  	
+  	"changelog": "./CHANGELOG.md"
   }
 }
