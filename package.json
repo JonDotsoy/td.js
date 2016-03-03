@@ -6,7 +6,8 @@
     "td": "./bin/td.js"
   },
   "scripts": {
-    "doc": "esdoc -c esdoc.json"
+    "doc": "esdoc -c esdoc.json",
+    "test": "td test"
   },
   "author": "Jon Dotsoy <hi@jon.soy>",
   "license": "ISC",
@@ -30,7 +31,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonDotsoy/td.js.git"
+    "url": "https://github.com/JonDotsoy/td.js.git"
   },
   "keywords": [
     "console"
