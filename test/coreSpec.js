@@ -10,13 +10,12 @@ describe("CORE: parserParams", function() {
 			"default": true,
 			"autovalue": true,
 		},
-		"name": {
-		},
 		"command": {
 			"default": "c",
 			"alias": ["c"],
 		},
 	};
+
 	it("importando core", function() {
 		parserParams = require(path.normalize(__dirname + "/../lib/core/parserParams.js"));
 
@@ -29,6 +28,7 @@ describe("CORE: parserParams", function() {
 		console.log(resultParse);
 		console.log();
 	});
+
 	describe("parámetros transformados", function() {
 		it("resultado no es de tipo objeto", function() {
 			expect(typeof(resultParse)).toBe("object");
