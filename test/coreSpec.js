@@ -22,6 +22,7 @@ describe("CORE: parserParams", function() {
 	it("importando core", function() {
 		parserParams = require(path.normalize(__dirname + "/../lib/core/parserParams.js"));
 
+		
 		expect(typeof(parserParams)).toEqual("function");
 	});
 
