@@ -4,11 +4,14 @@ var fs = require("fs");
 describe("CORE: parserParams", function() {
 	var parserParams;
 	var resultParse;
-	var toParse = ["--no-value", "--name=carton", "--cc", "2ss", "e", "--ce=33"];
+	var toParse = ["--no-value", "--name=carton", "-c", "2ss", "e", "--ce=33"];
 	var toOptions = {
 		"no-value": {
 			"default": true,
 			"autovalue": true,
+		},
+		"name": {
+			"default": "",
 		},
 		"command": {
 			"default": "c",
@@ -24,9 +27,6 @@ describe("CORE: parserParams", function() {
 
 	it("convirtiendo parguments", function() {
 		resultParse = parserParams(toOptions, toParse);
-		console.log();
-		console.log(resultParse);
-		console.log();
 	});
 
 	describe("parámetros transformados", function() {
@@ -41,5 +41,24 @@ describe("CORE: parserParams", function() {
 			expect(typeof(resultParse.options)).toBe("object");
 			expect(Array.isArray(resultParse.arguments)).toBeTruthy();
 		});
+	});
+
+	describe("valores esperados", function() {
+		
+		it("'arguments'", function() {
+			
+			expect(resultParse.options["no-value"]).toEqual(true);
+			expect(resultParse.options.name).toBe("carton");
+			expect(resultParse.options.command).toBe("2ss");
+
+		});
+
+		it("'options'", function() {
+
+			expect(resultParse.arguments).toContain("e");
+			expect(resultParse.arguments).toContain("--ce=33");
+
+		});
+
 	});
 });
