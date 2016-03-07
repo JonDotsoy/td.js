@@ -1,0 +1,11 @@
+{
+  "title": "td.js",
+  "source": "./lib",
+  "destination": "./doc",
+  "manual": {
+    "changelog": [
+      "./CHANGELOG.md"
+    ]
+  },
+  "includeSource": false
+}
