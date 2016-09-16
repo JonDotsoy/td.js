@@ -1,16 +1,19 @@
 import colors from 'colors/safe'
 
-// var colors = require("colors/safe");
-var Config = require("./core/config_load")("TD");
-var path = require("path");
-var pkg = require(path.normalize(__dirname + "/../package.json"));
-var reports = require(path.normalize(__dirname + "/reports"));
-var parserParams = require(path.normalize(__dirname + "/core/parserParams"));
-var _ = require("lodash");
-var cwd = process.cwd();
+// var colors = require("colors/safe")
+var Config = require("./core/config_load")("TD")
+var path = require("path")
+var pkg = require(path.normalize(__dirname + "/../package.json"))
+var reports = require(path.normalize(__dirname + "/reports"))
+var parserParams = require(path.normalize(__dirname + "/core/parserParams"))
+var _ = require("lodash")
+var cwd = process.cwd()
+
+
+console.log(3)
 
 // Get Arguments
-var args = process.argv.slice(2);
+var args = process.argv.slice(2)
 
 
 var cunstomiseConfigToCommand = parserParams({
@@ -40,7 +43,7 @@ var cunstomiseConfigToCommand = parserParams({
 		"default": true,
 		"alias": ["q"],
 	},
-}, args);
+}, args)
 
 
 /**
@@ -59,51 +62,51 @@ var defaultConfigToComnand = {
 }
 
 
-var OPTS = _.merge(defaultConfigToComnand, cunstomiseConfigToCommand.options);
-var ARGS = cunstomiseConfigToCommand.arguments;
+var OPTS = _.merge(defaultConfigToComnand, cunstomiseConfigToCommand.options)
+var ARGS = cunstomiseConfigToCommand.arguments
 
 
 var commandWatch = function() {
-	require(__dirname + "/nodemon")(OPTS, ARGS);
-};
+	require(__dirname + "/nodemon")(OPTS, ARGS)
+}
 
 var commandLive = function() {
-	require(__dirname + "/live")(OPTS, ARGS);
-};
+	require(__dirname + "/live")(OPTS, ARGS)
+}
 
 var commandCommand = function() {
-	require(__dirname + "/commander")(OPTS, ARGS);
-};
+	require(__dirname + "/commander")(OPTS, ARGS)
+}
 
 var commandInit = function() {
-	require(__dirname + "/init")(OPTS, ARGS);
-};
+	require(__dirname + "/init")(OPTS, ARGS)
+}
 
 var commandTest = function() {
-	require(__dirname + "/jasmine")(OPTS, ARGS);
-};
+	require(__dirname + "/jasmine")(OPTS, ARGS)
+}
 
 var commandVersion = function() {
-	var ver = _.get(OPTS, "pkg.version", '0.0.0');
+	var ver = _.get(OPTS, "pkg.version", '0.0.0')
 	if (OPTS.quiet === true) {
-		console.log(ver);
+		console.log(ver)
 	} else {
-		console.log(ver + " (td.js " + ver + ")");
+		console.log(ver + " (td.js " + ver + ")")
 	}
-};
+}
 
 var commandHelp = function() {
-	var sizeBeforeDescription = 20;
+	var sizeBeforeDescription = 20
 
 	var ln = function(str) {
-		return str + "\n";
-	};
+		return str + "\n"
+	}
 
 	var tn = function(str) {
-		return "\t" + ln(str);
-	};
+		return "\t" + ln(str)
+	}
 
-	var ver = _.get(OPTS, "pkg.version", '0.0.0');
+	var ver = _.get(OPTS, "pkg.version", '0.0.0')
 
 	var jsonOutHelp = {
 		usage: "td [options] COMMAND [arguments]",
@@ -160,59 +163,59 @@ var commandHelp = function() {
 				description: "Show help."
 			}
 		}
-	};
+	}
 
-	var outHelp = ln('');
+	var outHelp = ln('')
 
 	_.forEach(jsonOutHelp, function (value, indexVal) {
 
 		if (_.isObject(value)) {
-			outHelp += ln(_.capitalize(indexVal) + ':');
+			outHelp += ln(_.capitalize(indexVal) + ':')
 
 			if (indexVal === 'options') {
 				_.forEach(value, function (valueOption, nameOption){
-					var description = _.get(valueOption, "description", "");
+					var description = _.get(valueOption, "description", "")
 					var nameAction = _.map(_.concat([nameOption], _.get(valueOption,"alias", [])), function (optionStr) {
 						if (_.size(optionStr) !== 1) {
-							return '--' + optionStr;
+							return '--' + optionStr
 						} else {
-							return '-' + optionStr;
+							return '-' + optionStr
 						}
-					});
-					var nameActionJoin = _.join(nameAction, ", ");
+					})
+					var nameActionJoin = _.join(nameAction, ", ")
 
-					outHelp += tn(nameActionJoin + _.repeat(" ", sizeBeforeDescription - _.size(nameActionJoin)) + description);
-				});
+					outHelp += tn(nameActionJoin + _.repeat(" ", sizeBeforeDescription - _.size(nameActionJoin)) + description)
+				})
 			} else if (indexVal === 'commands') {
 				_.forEach(value, function (valueOption, nameOption){
-					var description = _.get(valueOption, "description", "");
+					var description = _.get(valueOption, "description", "")
 					var nameAction = _.map(_.concat([nameOption], _.get(valueOption,"alias", [])), function (optionStr) {
 						if (_.size(optionStr) !== 1) {
-							return optionStr;
+							return optionStr
 						} else {
-							return optionStr;
+							return optionStr
 						}
-					});
-					var nameActionJoin = _.join(nameAction, ", ");
+					})
+					var nameActionJoin = _.join(nameAction, ", ")
 
-					outHelp += tn(nameActionJoin + _.repeat(" ", sizeBeforeDescription - _.size(nameActionJoin)) + description);
-				});
+					outHelp += tn(nameActionJoin + _.repeat(" ", sizeBeforeDescription - _.size(nameActionJoin)) + description)
+				})
 			}
 
-			outHelp += ln('');
+			outHelp += ln('')
 
 		} else if (_.isString(value)) {
-			outHelp += ln(_.capitalize(indexVal) +': '+ value) + ln('');
+			outHelp += ln(_.capitalize(indexVal) +': '+ value) + ln('')
 		}
 
-	});
+	})
 
 	if (OPTS.quiet === true) {
-		console.log(JSON.stringify(jsonOutHelp, null, 4));
+		console.log(JSON.stringify(jsonOutHelp, null, 4))
 	} else {
-		console.log(outHelp);
+		console.log(outHelp)
 	}
-};
+}
 
 
 
@@ -220,35 +223,35 @@ var commandHelp = function() {
  * Execution
  */
 if (OPTS.help === true) {
-	commandHelp();
+	commandHelp()
 } else if (OPTS.version === true) {
-	commandVersion();
+	commandVersion()
 } else {
-	var action;
+	var action
 
 	switch (action = String(ARGS.shift()).toLowerCase()) {
 		case 'w':
 		case 'watch':
-			commandWatch();
-			break;
+			commandWatch()
+			break
 		case 'l':
 		case 'live':
-			commandLive();
-			break;
+			commandLive()
+			break
 		case 'c':
 		case 'command':
-			commandCommand();
-			break;
+			commandCommand()
+			break
 		case 'init':
-			// commandInit();
-			break;
+			// commandInit()
+			break
 		case 't':
 		case 'test':
-			commandTest();
-			break;
+			commandTest()
+			break
 		default:
-			commandHelp();
-			break;
+			commandHelp()
+			break
 	}
 
 }

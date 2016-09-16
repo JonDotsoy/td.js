@@ -8,8 +8,8 @@ var path = require("path");
  *
  * @method     exports
  * @param      {Object}  OPTS      - Conent parameters globals.
- * @param      {Object}  OPTS.pkg  - Conentent the `package.json`. 
- * @param      {string}  OPTS.pkg.version  - Version from td.js. 
+ * @param      {Object}  OPTS.pkg  - Conentent the `package.json`.
+ * @param      {string}  OPTS.pkg.version  - Version from td.js.
  */
 module.exports = function(OPTS, ARGS) {
 	/**

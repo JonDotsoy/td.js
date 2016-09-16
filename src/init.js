@@ -22,14 +22,14 @@ var loadTranslator = function(directory) {
 
 /**
  * Used to confirm whether or not rendered.
- * 
+ *
  * @callback   conditionalCallback
  * @param      {?boolean}           [permit=true]  It defines whether to proceed with rendering.
  */
 
 /**
  * Used to modify the rendering of the file.
- * 
+ *
  * @callback   fnRender
  * @param      {Object}              file          Data file to render.
  * @param      {string}              files.dest    Path destination the file.
@@ -114,8 +114,8 @@ var transformEjsCollection = function(files, preRender, data, cb) {
  * @method     writeFileByCollect
  * @param      {Object[]}  files        Collection of the files
  * @param      {string}    files.dest   Path of destination.
- * @param      {string}    files.src    
- * @param      {string}    files.local  
+ * @param      {string}    files.src
+ * @param      {string}    files.local
  * @param      {string}    foles.source Content to write.
  * @param      {function}  preWrite
  * @param      {functio} <name> { description }
@@ -235,7 +235,7 @@ var scanDirectorieGetFiles = function(pathOrigin, pathDestination, pathsIgnore, 
 }
 
 /**
- * Create a project based by a resource model. 
+ * Create a project based by a resource model.
  *
  * @param      {Object}  OPTS                      Content parameters by td.js.
  * @param      {string}  [OPTS.dir=process.cwd()]  Project directory.

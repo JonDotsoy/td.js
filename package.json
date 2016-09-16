@@ -7,9 +7,11 @@
   },
   "scripts": {
     "doc": "esdoc -c esdoc.json",
-    "test": "node_modules/.bin/mocha --compilers js:babel-register",
+    "lint": "node_modules/.bin/gulp lint",
+    "test": "node_modules/.bin/gulp test",
     "build": "node_modules/.bin/gulp build",
     "watch": "node_modules/.bin/gulp watch",
+    "testing": "node_modules/.bin/gulp testing",
     "gulp": "node_modules/.bin/gulp"
   },
   "author": "Jon Dotsoy <hi@jon.soy>",
@@ -28,13 +30,22 @@
     "walk": "^2.3.9"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-3": "^6.11.0",
     "babel-register": "^6.14.0",
+    "eslint-config": "^0.3.0",
+    "eslint-config-recommended": "^1.5.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-sort-imports-es6": "0.0.3",
     "expect": "^1.20.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-util": "^3.0.7",
+    "minimist": "^1.2.0",
     "mocha": "^3.0.2",
     "nodemon": "^1.8.1"
   },
