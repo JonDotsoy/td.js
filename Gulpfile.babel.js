@@ -1,4 +1,5 @@
 import Gulp from 'gulp'
+import babel from 'gulp-babel'
 
 
 const task = ::Gulp.task
@@ -6,5 +7,9 @@ const task = ::Gulp.task
 	,dest = ::Gulp.dest
 	,watch = ::Gulp.watch
 
+
+task('build', () => src('src/**/*')
+	.pipe(babel())
+	.pipe(dest('lib')))
 
 task('default', () => console.log('Hola'))
