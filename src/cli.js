@@ -1,4 +1,6 @@
-var colors = require("colors/safe");
+import colors from 'colors/safe'
+
+// var colors = require("colors/safe");
 var Config = require("./core/config_load")("TD");
 var path = require("path");
 var pkg = require(path.normalize(__dirname + "/../package.json"));

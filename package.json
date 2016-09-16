@@ -8,7 +8,8 @@
   "scripts": {
     "doc": "esdoc -c esdoc.json",
     "test": "td test",
-    "build": "npm run-script build",
+    "build": "node_modules/.bin/gulp build",
+    "watch": "node_modules/.bin/gulp watch",
     "gulp": "node_modules/.bin/gulp"
   },
   "author": "Jon Dotsoy <hi@jon.soy>",

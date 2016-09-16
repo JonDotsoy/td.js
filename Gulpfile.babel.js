@@ -8,8 +8,12 @@ const task = ::Gulp.task
 	,watch = ::Gulp.watch
 
 
-task('build', () => src('src/**/*')
+task('build', () => src(['src/**/*.js'])
 	.pipe(babel())
 	.pipe(dest('lib')))
+
+task('watch', () => {
+	watch(['src/**/*.js'], ['build'])
+})
 
 task('default', () => console.log('Hola'))
